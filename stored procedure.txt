@@ -1,0 +1,23 @@
+CREATE PROCEDURE [dbo].[UpdateProfile](
+	@name varchar(100) = null,
+	@email varchar(100) = null,
+	@mobile varchar(100) = null,
+	@dob date = null,
+	@password varchar(100) = null,
+	@username varchar(100) = null,
+	@Action varchar(100) = null
+)
+AS begin if @Action = 'Update'
+Update
+tblRegister
+set 
+[name] = @name,
+email = @email,
+mobile = @mobile,
+dob = @dob,
+[password] = @password
+where 
+username = @username
+end
+
+
